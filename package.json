@@ -1,4 +1,7 @@
 {
+	"scripts": {
+		"start": "node index"
+	},
   "dependencies": {
     "heroku": "^7.60.2",
     "peer": "^0.6.1"
