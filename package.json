@@ -2,8 +2,9 @@
 	"scripts": {
 		"start": "node index"
 	},
-  "dependencies": {
-    "heroku": "^7.60.2",
-    "peer": "^0.6.1"
-  }
+	"dependencies": {
+		"express": "^4.18.1",
+		"heroku": "^7.60.2",
+		"peer": "^0.6.1"
+	}
 }
