@@ -5,6 +5,8 @@
 	"dependencies": {
 		"express": "^4.18.1",
 		"heroku": "^7.60.2",
-		"peer": "^0.6.1"
-	}
+		"peer": "^0.6.1",
+		"public-ip": "^5.0.0"
+	},
+	"type": "module"
 }
