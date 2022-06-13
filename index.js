@@ -121,13 +121,15 @@ io.on("connection", (socket) => {
 	socket.on("next", () => {
 		// check if queue exists
 		if (queues[id]) {
-			// remove first user and store in variable
-			let removed = queues[id].users.splice(0, 1)
+			if (queues[id].users.length > 0) {
+				// remove first user and store in variable
+				let removed = queues[id].users.splice(0, 1)
 
-			// notify removed user 
-			connections[removed[0].id].socket.emit("disconnected", {reason: "first"})
-			// update queue
-			updateQueue(socket, id);
+				// notify removed user 
+				connections[removed[0].id].socket.emit("disconnected", {reason: "first"})
+				// update queue
+				updateQueue(socket, id);
+			}
 		}
 	})
 
