@@ -15,7 +15,7 @@ const io = new Server(server, {
 		origin: [
 			"http://localhost:5500",
 			"http://127.0.0.1:5500",
-			"https://QueueSystem.evananderson13.repl.co",
+			"https://queuesystem.evananderson13.repl.co",
 			"https://theeeevan.github.io"
 		],
 		allowedHeaders: [
