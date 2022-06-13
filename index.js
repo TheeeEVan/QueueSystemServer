@@ -195,7 +195,6 @@ io.on("connection", (socket) => {
 	})
 })
 
-
 function updateQueue(socket, id) {
 	// update host list
 	socket.emit("update", queues[id].users)
