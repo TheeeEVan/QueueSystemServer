@@ -79,7 +79,7 @@ io.on("connection", (socket) => {
 		if (queues[id]) {
 			// tell each user in queue to go away
 			queues[id].users.forEach(user => {
-				connections[user.id].socket.emit("disconnected", {reason: "Connection to Host Lost"})
+				connections[user.id].socket.emit("disconnected", {reason: "Lost connection to server."})
 			})
 			// destroy the queue cause it has no friends and all its users went away
 			delete queues[id]
@@ -141,7 +141,7 @@ io.on("connection", (socket) => {
 					// kick that user
 					let removed = queues[id].users.splice(i, 1)
 
-					connections[removed[0].id].socket.emit("disconnected", {reason: "Kicked"})
+					connections[removed[0].id].socket.emit("disconnected", {reason: "You have been kicked from the queue."})
 					updateQueue(socket, id)
 				}
 			}
@@ -169,7 +169,7 @@ io.on("connection", (socket) => {
 
 					// if exists is true send error otherwise add normally
 					if (exists) {
-						socket.emit("join-status", { status: 0, reason: "Name is already being used" })
+						socket.emit("join-status", { status: 0, reason: "That name is being used!" })
 					} else {
 						// add user object to queue
 						queues[data.id.toLowerCase()].users.push({ name: data.name, id: id })
@@ -187,7 +187,7 @@ io.on("connection", (socket) => {
 					socket.emit("join-status", { status: 1, reason: "Joined" })
 				}
 			} else {
-				socket.emit("join-status", {status: 0, reason: "Invalid"})
+				socket.emit("join-status", {status: 0, reason: "Invalid queue code!"})
 			}
 		}
 	})
