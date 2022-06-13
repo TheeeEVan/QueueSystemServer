@@ -1,11 +1,27 @@
 {
-	"scripts": {
-		"start": "node index"
-	},
-	"dependencies": {
-		"express": "^4.18.1",
-		"heroku": "^7.60.2",
-		"peer": "^0.6.1"
-	},
-	"type": "module"
+  "name": "queue-system-server",
+  "version": "0.1.0",
+  "description": "socketio server for queuesystem",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheeeEVan/QueueSystemServer.git"
+  },
+  "author": "Evan Anderson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TheeeEVan/QueueSystemServer/issues"
+  },
+  "homepage": "https://github.com/TheeeEVan/QueueSystemServer#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "generate-unique-id": "^2.0.1",
+    "nodemon": "^2.0.16",
+    "socket.io": "^4.5.1"
+  }
 }
