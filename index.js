@@ -91,8 +91,10 @@ io.on("connection", (socket) => {
 				queues[queue].users.forEach((user, index) => {
 					// if user id is the same we remove that id from queue and update
 					if (user.id == id) {
-						queues[queue].users.splice(index, 1);
-						updateQueue(connections[queue].socket, queue)
+						if (index > 0) {
+							queues[queue].users.splice(index, 1);
+							updateQueue(connections[queue].socket, queue)
+						}
 					}
 				})
 			}
