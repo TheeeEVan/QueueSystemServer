@@ -203,7 +203,9 @@ function updateQueue(socket, id) {
 
 	// update user positions
 	queues[id].users.forEach((user, key) => {
-		connections[user.id].socket.emit("position", {current: key + 1, total: queues[id].users.length})
+		if (connections[user.id]) {
+			connections[user.id].socket.emit("position", {current: key + 1, total: queues[id].users.length})
+		}
 	})
 }
 
