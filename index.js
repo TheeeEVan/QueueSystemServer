@@ -125,8 +125,10 @@ io.on("connection", (socket) => {
 				// remove first user and store in variable
 				let removed = queues[id].users.splice(0, 1)
 
-				// notify removed user 
-				connections[removed[0].id].socket.emit("disconnected", {reason: "first"})
+				// notify removed user
+				if (connections[removed[0].id]) {
+					connections[removed[0].id].socket.emit("disconnected", {reason: "first"})
+				}
 				// update queue
 				updateQueue(socket, id);
 			}
